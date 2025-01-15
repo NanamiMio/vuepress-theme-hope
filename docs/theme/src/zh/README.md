@@ -1,210 +1,325 @@
 ---
+containerClass: home
 home: true
 title: 主页
 icon: home
-heroImage: /logo.svg
+bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
+bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
+bgImageStyle:
+  background-attachment: fixed
 heroText: VuePress Theme Hope
 tagline: 一个具有强大功能的 vuepress 主题✨
 actions:
-  - text: 使用教程 🧭
-    link: /zh/cookbook/tutorial/
+  - text: 快速上手
+    link: ./get-started/
+    icon: signs-post
     type: primary
 
-  - text: 介绍 💡
-    link: /zh/guide/get-started/intro.html
+  - text: 指南
+    icon: lightbulb
+    link: ./guide/
 
-  - text: 配置 🛠
-    link: /zh/config/
+  - text: 案例
+    icon: star
+    link: ./demo/
 
-  - text: 在线案例 🪀
-    link: https://stackblitz.com/fork/vuepress-theme-hope
+highlights:
+  - header: 易于安装
+    image: /assets/image/box.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
+    highlights:
+      - title: 运行 <code>pnpm create vuepress-theme-hope hope-project</code> 以创建一个新的主题项目。
+      - title: 在已有项目根目录下运行 <code>pnpm create vuepress-theme-hope add .</code> 以在项目中添加主题。
 
-features:
-  - title: Markdown 增强
-    icon: fab fa-markdown
-    details: 新增文字对齐、上下角标、脚注、标记、任务列表、数学公式、流程图、图表与幻灯片支持
-    link: /zh/guide/markdown/
+  - header: 在 Markdown 中添加你想要的内容
+    description: 我们扩展了标准的 CommonMark 规范，为你添加了成吨功能。
+    image: /assets/image/markdown.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/2-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/2-dark.svg
+    bgImageStyle:
+      background-repeat: repeat
+      background-size: initial
+    features:
+      - title: 链接检查
+        icon: clipboard-check
+        details: 检查 Markdown 链接
+        link: ./guide/markdown/others.html#link-check
 
-  - title: 幻灯片页面
-    icon: person-chalkboard
-    details: 添加幻灯片页面以显示你喜欢的内容
-    link: /zh/guide/layout/slides
+      - title: 提示容器
+        icon: box-archive
+        details: 用样式装饰 Markdown 内容
+        link: ./guide/markdown/stylize/hint.html
 
-  - title: 布局增强
-    icon: object-group
-    details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
-    link: /zh/guide/layout/
+      - title: GFM 警告
+        icon: bell
+        details: GFM 风格的警告容器
+        link: ./guide/markdown/stylize/alert.html
 
-  - title: 浏览量与评论
-    icon: comment-dots
-    details: 配合 Waline 来开启阅读量统计与评论支持
-    link: /zh/guide/feature/comment.html
+      - title: 选项卡
+        icon: table-columns
+        details: 使用选项卡对相似内容进行分组
+        link: ./guide/markdown/content/tabs.html
 
-  - title: 文章信息
-    icon: circle-info
-    details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
-    link: /zh/guide/feature/page-info.html
+      - title: 代码组
+        icon: code
+        details: 使用选项卡对相似代码进行分组
+        link: ./guide/markdown/code/code-tabs.html
 
-  - title: 博客支持
-    icon: blog
-    details: 使用一些很棒的布局提供博客功能，通过文章的日期、标签和分类，自动生成文章、分类、标签与时间轴列表
-    link: /zh/guide/blog/intro.html
+      - title: 自定义对齐
+        icon: align-center
+        details: Markdown 中对内容进行自定义对齐
+        link: ./guide/markdown/stylize/align.html
 
-  - title: 主题色切换
-    icon: palette
-    details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
-    link: /zh/guide/interface/theme-color.html
+      - title: 自定义属性
+        icon: code
+        details: 为 Markdown 元素添加属性
+        link: ./guide/markdown/stylize/attrs.html
 
-  - title: 深色模式
-    icon: circle-half-stroke
-    details: 可以自由切换浅色模式与深色模式
-    link: /zh/guide/interface/darkmode.html
+      - title: 上下角标
+        icon: superscript
+        details: 轻松在 Markdown 中添加上下角标
+        link: ./guide/markdown/stylize/sup-sub.html
 
-  - title: 完整的无障碍支持
-    icon: universal-access
-    details: 为你的网站带来完整的无障碍支持
-    link: /zh/guide/interface/accessibility.html
+      - title: 脚注
+        icon: quote-left
+        details: 在内容中插入脚注
+        link: ./guide/markdown/content/footnote.html
 
-  - title: 文章加密
-    icon: lock
-    details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
-    link: /zh/guide/feature/encrypt.html
+      - title: 标记
+        icon: highlighter
+        details: 标记并高亮内容
+        link: ./guide/markdown/stylize/mark.html
 
-  - title: 搜索支持
-    icon: search
-    details: 支持 docsearch 和基于客户端的搜索
-    link: /zh/guide/feature/search.html
+      - title: 剧透
+        icon: eraser
+        details: 添加剧透标记支持
+        link: ./guide/markdown/stylize/spoiler.html
 
-  - title: 代码复制
-    icon: copy
-    details: 一键复制代码块中的代码
-    link: /zh/guide/feature/copy-code.html
+      - title: 任务列表
+        icon: square-check
+        details: 轻松插入任务列表
+        link: ./guide/markdown/grammar/tasklist.html
 
-  - title: 图片预览
-    icon: image
-    details: 像相册一样允许你浏览、缩放并分享你的页面图片
-    link: /zh/guide/feature/photo-swipe.html
+      - title: 图片语法
+        icon: image
+        details: 使用改进的语法指定图片大小与颜色模式
+        link: ./guide/markdown/grammar/image.html
 
-  - title: SEO 增强
-    icon: dumbbell
-    details: 将最终生成的网页针对搜索引擎进行优化。
-    link: /zh/guide/advanced/seo.html
+      - title: 组件支持
+        icon: puzzle-piece
+        details: 在 Markdown 中轻松插入组件
+        link: ./guide/component/grammar.html
 
-  - title: Sitemap
-    icon: sitemap
-    details: 自动为你的网站生成 Sitemap
-    link: /zh/guide/advanced/sitemap.html
+      - title: 组件
+        icon: puzzle-piece
+        details: 开箱即用的常用组件
+        link: ./guide/component/built-in.html
 
-  - title: Feed 支持
-    icon: rss
-    details: 生成你的 Feed，并通知你的用户订阅它
-    link: /zh/guide/advanced/feed.html
+      - title: Chart.js 支持
+        icon: chart-simple
+        details: 在 Markdown 中展示 Chart.js 图表
+        link: ./guide/markdown/chart/chartjs.html
 
-  - title: PWA 支持
-    icon: mobile-screen
-    details: 让你的网站更像一个 APP
-    link: /zh/guide/advanced/pwa.html
+      - title: 流程图支持
+        icon: route
+        details: 在 Markdown 中直接写出流程图
+        link: ./guide/markdown/chart/flowchart.html
 
-  - title: 更多新特性
-    icon: ellipsis
-    details: 包括图标支持、全屏按钮、返回顶部按钮等
-    link: /zh/guide/feature/
+      - title: Mermaid 支持
+        icon: chart-pie
+        details: 在 Markdown 中添加 Mermaid 图例
+        link: ./guide/markdown/chart/mermaid.html
+
+      - title: Plantuml 支持
+        icon: diagram-project
+        details: 在 Markdown 中添加 Plant UML 图表
+        link: ./guide/markdown/chart/plantuml.html
+
+      - title: Tex 支持
+        icon: square-root-variable
+        details: Markdown 现在也可以支持 Tex 语法以显示公式
+        link: ./guide/markdown/grammar/math.html
+
+      - title: 导入文件支持
+        icon: b:markdown
+        details: 将你的文档分段，并在 Markdown 中导入
+        link: ./guide/markdown/content/include.html
+
+      - title: 交互演示支持
+        icon: code
+        details: 你可以在 Markdown 中添加交互演示
+        link: ./guide/markdown/code/playground.html
+
+      - title: Kotlin 交互演示支持
+        icon: b:kickstarter
+        details: 响应式的 Kotlin 演示
+        link: ./guide/markdown/code/kotlin-playground.html
+
+      - title: Vue 交互演示支持
+        icon: b:vuejs
+        details: 在交互演示中展示 Vue 组件
+        link: ./guide/markdown/code/vue-playground.html
+
+      - title: Sandpack 交互演示支持
+        icon: code
+        details: Sandpack 驱动的实时的编码环境
+        link: ./guide/markdown/code/sandpack.html
+
+      - title: 代码案例支持
+        icon: laptop-code
+        details: 你可以很方便的插入代码案例
+        link: ./guide/markdown/code/demo.html
+
+      - title: 幻灯片支持
+        icon: person-chalkboard
+        details: 通过 Reveal.js 在 Markdown 中插入幻灯片
+        link: ./guide/markdown/content/revealjs.html
+
+  - header: 可定制的页面
+    description: 完整无障碍支持的可定制外观
+    image: /assets/image/ui.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/9-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/9-dark.svg
+    highlights:
+      - title: 深色模式
+        icon: circle-half-stroke
+        details: 可以自由切换浅色模式与深色模式
+        link: ./guide/interface/darkmode.html
+
+      - title: 主题色切换
+        icon: palette
+        details: 支持自定义主题色并允许用户在预设的主题颜色之间切换
+        link: ./guide/interface/theme-color.html
+
+      - title: 更多
+        icon: ellipsis
+        details: RTL 布局，打印支持，全局按钮等
+        link: ./guide/interface/others.html
+
+  - header: 布局
+    description: 一个完美的响应式布局。
+    image: /assets/image/layout.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+    highlights:
+      - title: 导航栏
+        icon: window-maximize
+        details: 完全可定制的导航栏以及改进的移动端外观
+        link: ./guide/layout/navbar.html
+
+      - title: 侧边栏
+        icon: fas fa-window-maximize fa-rotate-270
+        details: 从文档标题或文件结构中自动生成侧边栏
+        link: ./guide/layout/sidebar.html
+
+      - title: 幻灯片页面
+        icon: person-chalkboard
+        details: 添加幻灯片页面以显示你喜欢的内容
+        link: ./guide/layout/slides.html
+
+      - title: 布局增强
+        icon: object-group
+        details: 添加路径导航、页脚、改进的导航栏、改进的页面导航等。
+        link: ./guide/layout/
+
+      - title: 更多
+        icon: ellipsis
+        details: RTL 布局，打印支持，全局按钮等
+        link: ./guide/interface/others.html
+
+  - header: 新功能
+    image: /assets/image/features.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/1-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/1-dark.svg
+    features:
+      - title: 目录页面
+        icon: network-wired
+        details: 自动生成目录页以及开箱即用的目录组件
+        link: ./guide/feature/catalog.html
+
+      - title: 浏览量与评论
+        icon: comment-dots
+        details: 配合 4 个评论服务开启阅读量统计与评论支持
+        link: ./guide/feature/comment.html
+
+      - title: 文章信息
+        icon: circle-info
+        details: 为你的文章添加作者、写作日期、预计阅读时间、字数统计等信息
+        link: ./guide/feature/page-info.html
+
+      - title: 文章加密
+        icon: lock
+        details: 你可以为你的特定页面或特定目录进行加密，以便陌生人不能随意访问它们
+        link: ./guide/feature/encrypt.html
+
+      - title: 搜索支持
+        icon: search
+        details: 支持 docsearch 和基于客户端的搜索
+        link: ./guide/feature/search.html
+
+      - title: 代码块
+        icon: code
+        details: 自定义代码块主题、行号、行高亮、复制按钮等
+        link: ./guide/markdown/code/fence.html.html
+
+      - title: 图片预览
+        icon: image
+        details: 像相册一样允许你浏览、缩放并分享你的页面图片
+        link: ./guide/feature/photo-swipe.html
+
+  - header: 博客
+    description: 通过主题创建个人博客
+    image: /assets/image/blog.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
+    highlights:
+      - title: 博客功能
+        icon: blog
+        details: 通过文章的日期、标签和分类展示文章
+        link: ./guide/blog/intro.html
+
+      - title: 博客主页
+        icon: home
+        details: 全新博客主页
+        link: ./guide/blog/home.html
+
+      - title: 博主信息
+        icon: circle-info
+        details: 自定义名称、头像、座右铭和社交媒体链接
+        link: ./guide/blog/blogger.html
+
+      - title: 时间线
+        icon: clock
+        details: 在时间线中浏览和通读博文
+        link: ./guide/blog/timeline.html
+
+  - header: 高级
+    description: 增强站点与用户体验的高级功能
+    image: /assets/image/advanced.svg
+    bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg
+    bgImageDark: https://theme-hope-assets.vuejs.press/bg/4-dark.svg
+    highlights:
+      - title: SEO 增强
+        icon: dumbbell
+        details: 将最终生成的网页针对搜索引擎进行优化。
+        link: ./guide/advanced/seo.html
+
+      - title: Sitemap
+        icon: sitemap
+        details: 自动为你的网站生成 Sitemap
+        link: ./guide/advanced/sitemap.html
+
+      - title: Feed 支持
+        icon: rss
+        details: 生成你的 Feed，并通知你的用户订阅它
+        link: ./guide/advanced/feed.html
+
+      - title: PWA 支持
+        icon: mobile-screen
+        details: 让你的网站更像一个 APP
+        link: ./guide/advanced/pwa.html
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
-
-## 🛠 安装
-
-在当前目录下的 `[dir]` 文件夹内创建 vuepress-theme-hope 项目:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm create vuepress-theme-hope [dir]
-```
-
-@tab npm
-
-```bash
-npm init vuepress-theme-hope [dir]
-```
-
-:::
-
-要将 vuepress-theme-hope 作为文档构建器添加到现有项目中，请在项目根目录中运行以下命令:
-
-::: code-tabs#shell
-
-@tab pnpm
-
-```bash
-pnpm create vuepress-theme-hope add [dir]
-```
-
-@tab npm
-
-```bash
-npm init vuepress-theme-hope add [dir]
-```
-
-:::
-
-## 🚀 使用
-
-::: code-tabs#language
-
-@tab TS
-
-```ts
-// .vuepress/config.ts
-import { defineUserConfig } from "vuepress";
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default defineUserConfig({
-  // 站点选项
-  // ...
-
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
-});
-```
-
-@tab JS
-
-```js
-// .vuepress/config.js
-import { hopeTheme } from "vuepress-theme-hope";
-
-export default {
-  // 站点选项
-  // ...
-
-  theme: hopeTheme({
-    // 主题选项
-    // ...
-  }),
-};
-```
-
-:::
-
-## 使用教程
-
-- [详细小白教程](cookbook/tutorial/README.md)
-
-## 官方 QQ 群
-
-- [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
-
-<!-- markdownlint-disable -->
-
-<NetlifyBadge alt="通过 Netlify 部署" />
-
-<script setup lang="ts">
-import NetlifyBadge from "@NetlifyBadge";
-</script>

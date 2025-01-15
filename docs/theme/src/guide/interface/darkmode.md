@@ -9,19 +9,23 @@ tag:
   - Interface
 ---
 
-In dark mode, the page uses a dark background to make you comfortable.
+The theme supports darkmode and allows you to customize it.
 
 <!-- more -->
-
-## Try it
-
-Toggle the button below to see effects.
-
-<AppearanceSwitch />
 
 ## Options
 
 You can config darkmode through `darkmode` in theme options.
+
+```js {5} title=".vuepress/config.js"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default {
+  theme: hopeTheme({
+    darkmode: "your option",
+  }),
+};
+```
 
 Available options:
 
@@ -31,10 +35,36 @@ Available options:
 - `"enable"`: only dark mode
 - `"disable"`: disable dark mode
 
-## Global Variables
+::: tip Try it
 
-`$isDarkmode` is available in all Markdown files.
+Toggle the button to see effects: <ColorModeSwitch />
+
+:::
+
+## Getting Status
+
+- In Markdown files or Vue Template, you can access `$isDarkmode` to get darkmode status directly.
+
+- In scripts, you can import `useDarkmode` from `vuepress-theme-hope/darkmode` to get darkmode status:
+
+  ```ts
+  import { useDarkmode } from "vuepress-theme-hope/darkmode";
+
+  const { isDarkmode } = useDarkmode();
+
+  console.log(isDarkmode.value); // get darkmode status
+  ```
+
+  If you enable theme alias by setting `{ custom: true}`, you should use `@theme-hope/modules/outlook/composables/index` instead:
+
+  ```ts
+  import { useDarkmode } from "@theme-hope/modules/outlook/composables";
+
+  const { isDarkmode } = useDarkmode();
+
+  console.log(isDarkmode.value); // get darkmode status
+  ```
 
 <script setup lang="ts">
-import AppearanceSwitch from "@theme-hope/modules/outlook/components/AppearanceSwitch"
+import ColorModeSwitch from "@theme-hope/modules/outlook/components/ColorModeSwitch"
 </script>
