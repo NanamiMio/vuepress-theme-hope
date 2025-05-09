@@ -8,16 +8,11 @@ import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
 import { useFrontmatter } from "vuepress/client";
 
-import { useData } from "@theme-hope/composables/index";
-import type {
-  CategoryMapRef,
-  TagMapRef,
-} from "@theme-hope/modules/blog/composables/index";
-import type { PageInfoProps } from "@theme-hope/modules/info/components/PageInfo";
-import type {
-  PageCategory,
-  PageTag,
-} from "@theme-hope/modules/info/utils/index";
+import type { PageInfoProps } from "@theme-hope/components/info/PageInfo";
+import type { CategoryMapRef } from "@theme-hope/composables/blog/useCategoryMap";
+import type { TagMapRef } from "@theme-hope/composables/blog/useTagMap";
+import { useData } from "@theme-hope/composables/useData";
+import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
 import { useAuthorInfo } from "./useAuthorInfo.js";
 import type {
@@ -26,8 +21,6 @@ import type {
   ThemeBasePageFrontmatter,
 } from "../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../shared/index.js";
-
-declare const __VP_BLOG__: boolean;
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
@@ -45,9 +38,10 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
-  const categoryMap = __VP_BLOG__
-    ? inject<CategoryMapRef>(Symbol.for("categoryMap"))
-    : null;
+  const categoryMap = inject<CategoryMapRef | null>(
+    Symbol.for("categoryMap"),
+    null,
+  );
 
   return computed(() =>
     getCategory(frontmatter.value.category ?? frontmatter.value.categories).map(
@@ -61,7 +55,7 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
-  const tagMap = __VP_BLOG__ ? inject<TagMapRef>(Symbol.for("tagMap")) : null;
+  const tagMap = inject<TagMapRef | null>(Symbol.for("tagMap"), null);
 
   return computed(() =>
     getTag(frontmatter.value.tag ?? frontmatter.value.tags).map((name) => ({
